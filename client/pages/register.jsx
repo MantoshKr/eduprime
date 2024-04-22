@@ -1,23 +1,16 @@
 import React, { useState } from "react";
 
-const register = () => {
+const Register = () => {
   const [name, setName] = useState("");
   const [lastname, setLastname] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [passwordError, setPasswordError] = useState("");
 
-
-
-
-
   const handlePasswordChange = (e) => {
     const newPassword = e.target.value;
     setPassword(newPassword);
 
-    
-
-    // Check if password meets the criteria
     if (newPassword.length < 6 || !/\d/.test(newPassword)) {
       setPasswordError(
         "Password must be at least 6 characters long and contain at least one digit."
@@ -27,23 +20,19 @@ const register = () => {
     }
   };
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.table({name ,lastname, email , password})
-  }
-
-
-
+    console.table({ name, lastname, email, password });
+  };
 
   return (
     <div>
-      <div className="bg-white">
-        <div className="lg:grid lg:min-h-screen lg:grid-cols-12">
-          <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-full xl:col-span-6">
+      <div  style={{backgroundColor:"#E8E8EA"}}>
+        <div className="lg:grid lg:min-h-screen h-80vh lg:grid-cols-12">
+          <section className="relative flex h-32 items-end bg-gray-900 lg:col-span-5 lg:h-[90vh] xl:col-span-6">
             <img
               alt="regimg"
-              src="/images/img4.jpg"
+              src="/images/registerimg2.jpg"
               className="absolute inset-0 h-full w-full object-cover opacity-90"
             />
 
@@ -72,7 +61,11 @@ const register = () => {
                 </p>
               </div>
 
-              <form onSubmit= {handleSubmit} action="#" className="mt-8 grid grid-cols-6 gap-6">
+              <form
+                onSubmit={handleSubmit}
+                action="#"
+                className="mt-8 grid grid-cols-6 gap-6"
+              >
                 <div className="col-span-6 sm:col-span-3">
                   <label
                     htmlFor="FirstName"
@@ -151,22 +144,6 @@ const register = () => {
                   )}
                 </div>
 
-                {/* <div className="col-span-6 sm:col-span-3">
-                  <label
-                    htmlFor="PasswordConfirmation"
-                    className="block text-sm font-medium text-gray-700"
-                  >
-                    Password Confirmation
-                  </label>
-
-                  <input
-                    type="password"
-                    id="PasswordConfirmation"
-                    name="password_confirmation"
-                    className="mt-1 w-full rounded-md border-gray-200 bg-white text-sm text-gray-700 shadow-sm"
-                  />
-                </div> */}
-
                 <div className="col-span-6">
                   <label htmlFor="MarketingAccept" className="flex gap-4">
                     <input
@@ -225,4 +202,4 @@ const register = () => {
   );
 };
 
-export default register;
+export default Register;
