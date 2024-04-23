@@ -1,5 +1,8 @@
 import React from "react";
 import Carousel from "../components/Carousel";
+import Tabs from "../components/Tabs";
+
+
 
 const Index = () => {
   return (
@@ -10,10 +13,13 @@ const Index = () => {
           All the skills you need in one place
         </p>
         <p className="my-3 text-xl">
-          From critical skills to technical topics, EduPrime supports your
+        From critical skills to technical topics, EduPrime supports your
           professional development.
         </p>
       </div>
+      <Tabs />
+      
+      
     </div>
   );
 };
