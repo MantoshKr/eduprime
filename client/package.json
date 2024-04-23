@@ -13,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@glidejs/glide": "^3.6.0",
     "next": "^14.2.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
