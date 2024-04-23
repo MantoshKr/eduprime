@@ -37,7 +37,7 @@ const Register = () => {
             />
 
             <div className="hidden lg:relative lg:block lg:p-12">
-              <h2 className="mt-6 text-2xl font-bold text-red-500 sm:text-3xl md:text-4xl ">
+              <h2 className="mt-6 text-2xl font-bold text-red-500 sm:text-3xl md:text-4xl " >
                 Welcome to EduPrime
               </h2>
 
