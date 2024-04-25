@@ -1,4 +1,5 @@
 import * as Tabs from "@radix-ui/react-tabs";
+import CourseCard from "./CourseCard";
 import { FaCode } from "react-icons/fa";
 import { GrCertificate } from "react-icons/gr";
 import { GiEagleEmblem } from "react-icons/gi";
@@ -63,9 +64,10 @@ export default () => {
       </Tabs.List>
       {tabItems.map((item, idx) => (
         <Tabs.Content key={idx} className="py-6" value={item.name}>
-          <p className="text-xs leading-normal">
+          <div className="text-xs leading-normal">
             This is <b>{item.name}</b> Tab
-          </p>
+            <CourseCard />
+          </div>
         </Tabs.Content>
       ))}
     </Tabs.Root>

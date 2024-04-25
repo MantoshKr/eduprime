@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from "../components/Carousel";
 import Tabs from "../components/Tabs";
 import Pricing from "../components/Pricing";
+import Footer from "../components/Footer";
 
 
 
@@ -20,6 +21,7 @@ const Index = () => {
       </div>
       <Tabs />
       <Pricing />
+      <Footer />
       
       
     </div>

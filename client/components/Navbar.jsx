@@ -17,13 +17,13 @@ const dropdownNavs = [
       {
         title: "Development",
         desc: "Building software, coding, programming languages",
-        path: "javascript:void(0)",
+        path: "#",
         icon: <FaCode style={{ fontSize: "30px" }} />,
       },
       {
         title: "IT & Softwares",
         desc: "Technology, software solutions, digital innovation",
-        path: "javascript:void(0)",
+        path: "#",
         icon: <MdOutlineDesktopMac style={{ fontSize: "22px" }} />,
       },
     ],
@@ -34,13 +34,13 @@ const dropdownNavs = [
       {
         title: "Buisness",
         desc: "Commerce, finance, corporate activities",
-        path: "javascript:void(0)",
+        path: "#",
         icon: <FaBriefcase style={{ fontSize: "25px" }} />,
       },
       {
         title: "Personal Development",
         desc: "Self-improvement, growth, lifelong learning",
-        path: "javascript:void(0)",
+        path: "#",
         icon: <FaBrain style={{ fontSize: "25px" }} />,
       },
     ],
@@ -51,14 +51,14 @@ const dropdownNavs = [
       {
         title: "Health & Fitness",
         desc: "Wellness, exercise, healthy living",
-        path: "javascript:void(0)",
+        path: "#",
         icon: <IoFitness style={{ fontSize: "30px" }} />,
       },
 
       {
         title: "Music",
         desc: "Melodies, rhythms, audio compositions, performances",
-        path: "javascript:void(0)",
+        path: "#",
         icon: <FaMusic style={{ fontSize: "22px" }} />,
       },
     ],
@@ -75,13 +75,13 @@ export default () => {
   const navigation = [
     {
       title: "Categories",
-      path: "javascript:void(0)",
+      path: "#",
       isDrapdown: true,
       navs: dropdownNavs,
     },
-    { title: "Pricing", path: "javascript:void(0)", isDrapdown: false },
-    { title: "Buisness", path: "javascript:void(0)", isDrapdown: false },
-    { title: "Teaching", path: "javascript:void(0)", isDrapdown: false },
+    { title: "Pricing", path: "/pricingPage", isDrapdown: false },
+    { title: "Buisness", path: "#", isDrapdown: false },
+    { title: "Teaching", path: "#", isDrapdown: false },
   ];
 
   useEffect(() => {
