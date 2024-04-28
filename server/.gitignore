@@ -1,0 +1,23 @@
+# Ignore node_modules directory
+/node_modules
+
+# Ignore environment variables files
+.env
+.env.local
+
+
+
+# Ignore build artifacts and dependencies
+/build/
+/dist/
+/coverage/
+.next/
+package-lock.json
+
+
+
+# Ignore editor/IDE files
+.idea/
+.vscode/
+*.iml
+*.DS_Store
