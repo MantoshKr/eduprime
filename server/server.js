@@ -1,26 +1,46 @@
-import express from 'express'
-import cors from 'cors'
-const morgan = require("morgan");
-require("dotenv").config();
-import {readdirSync} from "fs"
+import "core-js/stable/index.js";
+import "regenerator-runtime/runtime.js";
+import express from "express";
+import cors from "cors";
+import morgan from "morgan";
+import mongoose from "mongoose";
+import { readdirSync } from "fs";
+import dotenv from "dotenv";
+dotenv.config();
 
-//create express app 
+// create express app
 const app = express();
 
-//apply middlewares 
+// db connection
+mongoose
+  .connect(process.env.DATABASE, {})
+  .then(() => console.log("DB CONNECTED"))
+  .catch((err) => console.error("DB CONNECTION ERROR:", err));
+
+// apply middlewares
 app.use(cors());
 app.use(express.json());
 app.use(morgan("dev"));
-// app.use(() => console.log("this is my own middleware"));
-// app.use((req , res , next) => {console.log("this is my own middleware")
-// next();
-// });
 
-//route 
-readdirSync("./routes").map((r) => app.use("/api" , require(`./routes/${r}`)));
+// route setup
+const routeFiles = readdirSync("./routes");
+routeFiles.forEach((routeFile) => {
+  if (routeFile.endsWith(".js")) {
+    import(`./routes/${routeFile}`)
+      .then((module) => {
+        const route = module.default;
+        app.use("/api", route);
+      })
+      .catch((err) => {
+        console.error("Error importing route:", err);
+      });
+  }
+});
 
+// port
+const port = process.env.PORT || 8000;
 
-//port 
-const port = process.env.PORT || 8000
-
-app.listen(port, () => console.log(`server is running on port ${port}`))
+// start server
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
