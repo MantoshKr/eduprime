@@ -1,5 +1,7 @@
 import "../index.css"
 import Navbar from "../components/Navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function MyApp({Component, pageProps}){
     return (
@@ -10,6 +12,7 @@ function MyApp({Component, pageProps}){
     
     <Component {...pageProps} />
     </div>
+    <ToastContainer position="top-right" />
     
     </>
     )
